@@ -1,0 +1,32 @@
+function  update(id){
+    let btn_titleid = 'title'+id;
+    let btn_dateid = 'date'+id;
+    let btn_descriptionid = 'description'+id;
+    let btn_priorityid = 'priority'+id;
+    let btn_typeid = 'type'+id;
+    // let btn_priority_if = '';
+
+    // get content
+    let btn_title = document.getElementById(btn_titleid).textContent;
+    let btn_date = document.getElementById(btn_dateid).getAttribute('data');
+    let btn_description = document.getElementById(btn_descriptionid).textContent;
+    let btn_priority = document.getElementById("priority"+id).getAttribute("data");
+    // console.log("priority"+id)
+    console.log("messsi");
+    // document.getElementById('1_low').selected = 'true';
+    // if (btn_priority == "Low") {
+    //     btn_priority_if = 
+    // } else {
+        
+    // }
+    let btn_type = document.getElementById(btn_typeid).textContent;
+
+    //remplire de form
+    document.getElementById('task-title').value = btn_title;
+    // document.getElementById('task-title').value = ;
+    document.getElementById('task-priority').value = "1";
+    // console.log(document.getElementById('task-priority'))
+    document.getElementById('task-date').value = btn_date;
+    document.getElementById('task-description').value = btn_description ;
+
+}
