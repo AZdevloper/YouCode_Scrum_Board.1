@@ -70,7 +70,6 @@ let drag_type ;
   
   }else if(e.currentTarget.getAttribute('id')== 'in-progress-tasks'){
     drag_type = '2' ;
-    alert("progress");
   }else if (e.currentTarget.getAttribute('id')== 'done-tasks') {
     drag_type = '3' ;
    

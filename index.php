@@ -1,5 +1,13 @@
 <?php
     include('scripts.php');
+	// foreach($count as $row){
+	// 	echo "<pre>";
+	// 	var_dump($row["Nofrow"]);
+	// 	echo "</pre>";
+	// }
+	
+	
+
 ?>
 
 <!DOCTYPE html>
@@ -241,10 +249,11 @@
 				<div class="ms-md-4 mt-md-0 mt-2"><i class="far fa-clock fa-fw me-1 text-dark text-opacity-50"></i> 14 day(s)</div>
 			</div>
 
-			<?php if (isset($_SESSION['message'])): ?>
+			<?php   if (isset($_SESSION['message'])): ?>
 				<div class="alert alert-green alert-dismissible fade show">
 					<strong>Success!</strong>
 						<?php 
+						echo "------------------";
 							echo $_SESSION['message'];
 							unset($_SESSION['message']);
 							
@@ -259,7 +268,7 @@
 				<div class="col-xl-4 col-lg-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">To do (<span id="to-do-tasks-count">0</span>)</h4>
+							<h4 class="panel-title">To do (<span id="to-do-tasks-count" style="color: red"><?php echo $to_Do; ?></span>)</h4>
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
@@ -284,7 +293,7 @@
 				<div class="col-xl-4 col-lg-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">In Progress (<span id="in-progress-tasks-count">0</span>)</h4>
+							<h4 class="panel-title">In Progress (<span id="in-progress-tasks-count" style="color: red"><?php echo $countInProgress; ?></span>)</h4>
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
@@ -307,7 +316,7 @@
 				<div class="col-xl-4 col-lg-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">Done (<span id="done-tasks-count">0</span>)</h4>
+							<h4 class="panel-title">Done (<span id="done-tasks-count" style="color: red"><?php echo $done; ?></span>)</h4>
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
@@ -368,11 +377,11 @@
 								<label class="form-label">Type</label>
 								<div class="ms-3">
 									<div class="form-check mb-1">
-										<input class="form-check-input" name="task-type" type="radio" value="1" id="task-type-feature"/>
+										<input class="form-check-input" name="task-type" type="radio" value="1" id="task-type-feature" required/>
 										<label class="form-check-label" for="task-type-feature">Feature</label>
 									</div>
 									<div class="form-check">
-										<input class="form-check-input" name="task-type" type="radio" value="2" id="task-type-bug"/>
+										<input class="form-check-input" name="task-type" type="radio" value="2" id="task-type-bug" required/>
 										<label class="form-check-label" for="task-type-bug">Bug</label>
 									</div>
 								</div>
@@ -380,8 +389,8 @@
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Priority</label>
-								<select name='Priority' class="form-select" id="task-priority">
-									<option selected > select priority her </option>
+								<select name='Priority' class="form-select" id="task-priority" required>
+									<option  value=""> select priority her </option>
 									<option id="1_low" value="1" >Low</option>
 									<option id="2_Medium" value="2" >Medium</option>
 									<option id="3_High" value="3">High</option>
@@ -390,7 +399,7 @@
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Status</label>
-								<select class="form-select" id="task-status" name="Status" >
+								<select class="form-select" id="task-status" name="Status" required >
 									<option value="" >Please select</option>
 									<option value="1">To Do</option>
 									<option value="2">In Progress</option>
@@ -399,11 +408,11 @@
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Date</label>
-								<input type="date" class="form-control" name="Date" id="task-date"/>
+								<input type="date" class="form-control" name="Date" id="task-date" required/>
 							</div>
 							<div class="mb-0">
 								<label class="form-label">Description</label>
-								<textarea class="form-control" name='Description' rows="10" id="task-description"></textarea>
+								<textarea class="form-control" name='Description' rows="10" id="task-description" required></textarea>
 							</div>
 						
 					</div>
