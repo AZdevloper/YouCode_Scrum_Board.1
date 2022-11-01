@@ -267,7 +267,7 @@
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
 							</div>
 						</div>
-						<div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="to-do-tasks">
+						<div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="to-do-tasks" onDragStart="start(event)"  onDragOver="return over(event)" onDrop="return drop(event)">
 							<!-- TO DO TASKS HERE -->
 							<?php
 
@@ -292,7 +292,7 @@
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
 							</div>
 						</div>
-						<div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="in-progress-tasks">
+						<div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="in-progress-tasks" onDragStart="start(event)"  onDragOver="return over(event)" onDrop="return drop(event)">
 							<!-- IN PROGRESS TASKS HERE -->
 							<?php
 							 $task_status = "in_progress";
@@ -315,7 +315,7 @@
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
 							</div>
 						</div>
-						<div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="done-tasks">
+						<div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="done-tasks" onDragStart="start(event)"  onDragOver="return over(event)" onDrop="return drop(event)">
 							<!-- DONE TASKS HERE -->
 							<?php
 								//PHP CODE HERE
@@ -409,7 +409,6 @@
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-						<button  type="submit" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn">Delete</a>
 						<button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</a>
 						<button type="submit" name="save" class="btn btn-primary task-action-btn" id="task-save-btn">Save</button>
 					</div >
@@ -422,11 +421,9 @@
 	<script src="assets/js/vendor.min.js"></script>
 	<script src="assets/js/app.min.js"></script>
 	<!-- ================== END core-js ================== -->
-	<script src="assets/js/main.js"></script>
-	<!-- <script src="assets/js/main.js"></script> -->
+	<script src="assets/js/index.js"></script>
 
 	<script>
-		//reloadTasks();
 	</script>
 </body>
 </html>

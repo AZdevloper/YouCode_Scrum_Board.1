@@ -44,7 +44,7 @@ function getTasks($task_status)
             
                  
                     echo ' 
-                <button class="d-flex  text-start mb-1  rounded-3 p-0 " draggable="true">
+                <button class="d-flex  text-start mb-1 rounded-3 p-0 " id="'.$id.'" draggable="true">
                     
                     <div class="icon">
                     '.$icon.'

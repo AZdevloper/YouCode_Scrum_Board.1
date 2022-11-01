@@ -1,4 +1,5 @@
 function update(id) {
+  document.getElementById("task-update-btn").style.display = "block";
   let btn_titleid = "title" + id;
   let btn_dateid = "date" + id;
   let btn_descriptionid = "description" + id;
@@ -39,5 +40,36 @@ function update(id) {
 // resit form
 
 function resit() {
+  document.getElementById("task-update-btn").style.display = "none";
+ 
+
   document.getElementById("form-task").reset();
+}
+
+
+// drag and drop 
+function start(e) {
+  e.dataTransfer.effectAllowed = "move";
+  e.dataTransfer.setData("text", e.target.getAttribute("id"));
+}
+function over(e) {
+  return false;
+}
+function drop(e) {
+
+  ob = e.dataTransfer.getData("text");
+  e.currentTarget.appendChild(document.getElementById(ob));
+  document.getElementById(ob)
+  // if(e.currentTarget.getAttribute('id')== 'in_progress_tasks'){
+  //   tasks[ob-1].status = 'In Progress' ;
+  // }else if(e.currentTarget.getAttribute('id')== 'done_tasks'){
+  //   tasks[ob-1].status = 'Done' ;
+  // }else if (e.currentTarget.getAttribute('id')== 'toDo_tasks') {
+  //   tasks[ob-1].status = 'To Do' ;
+    
+  // }
+  
+  
+  e.stopPropagation();
+  // reloadTasks();
 }
