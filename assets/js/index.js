@@ -1,4 +1,5 @@
 function update(id) {
+
   document.getElementById("task-update-btn").style.display = "block";
   let btn_titleid = "title" + id;
   let btn_dateid = "date" + id;
@@ -7,6 +8,7 @@ function update(id) {
   let btn_typeid = "type" + id;
 
   // get content
+  
   let btn_title = document.getElementById(btn_titleid).textContent;
   let btn_date = document.getElementById(btn_dateid).getAttribute("data");
   let btn_description = document.getElementById(btn_descriptionid).textContent;
@@ -59,15 +61,31 @@ function drop(e) {
 
   ob = e.dataTransfer.getData("text");
   e.currentTarget.appendChild(document.getElementById(ob));
-  document.getElementById(ob)
-  // if(e.currentTarget.getAttribute('id')== 'in_progress_tasks'){
-  //   tasks[ob-1].status = 'In Progress' ;
-  // }else if(e.currentTarget.getAttribute('id')== 'done_tasks'){
-  //   tasks[ob-1].status = 'Done' ;
-  // }else if (e.currentTarget.getAttribute('id')== 'toDo_tasks') {
-  //   tasks[ob-1].status = 'To Do' ;
+  let id = document.getElementById(ob).getAttribute("id")
+  console.log(e.currentTarget.getAttribute('id'))
+// get type of droped item 
+let drag_type ;
+  if(e.currentTarget.getAttribute('id') == "to-do-tasks"){
+    drag_type = "1" ;
+  
+  }else if(e.currentTarget.getAttribute('id')== 'in-progress-tasks'){
+    drag_type = '2' ;
+    alert("progress");
+  }else if (e.currentTarget.getAttribute('id')== 'done-tasks') {
+    drag_type = '3' ;
+   
     
-  // }
+  }
+  // change status to dropped status
+  document.getElementById('type'+id).setAttribute("datastatus",drag_type );
+  let type = document.getElementById('type'+id);
+  console.log(type)
+
+  update(id);
+  document.getElementById("task-update-btn").click();
+
+
+
   
   
   e.stopPropagation();

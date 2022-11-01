@@ -141,6 +141,8 @@ function updateTask()
     { 
     include('database.php');
 
+   
+
     if(isset($_POST['update']))  $id = $_POST['input-hidden'];
     $title = $_POST["title"];
     $type = $_POST["task-type"];
@@ -148,6 +150,7 @@ function updateTask()
     $Status = $_POST["Status"];
     $date = $_POST["Date"];
     $description = $_POST["Description"];
+   
     
 
     if (empty($type) || empty( $title ) ||empty($Priority) || empty($Status) ||empty($date) || empty($description) ) {
@@ -159,7 +162,7 @@ function updateTask()
  
         $sql ="    UPDATE `tasks` SET `title`='$title',`type_id`='$type',`priority_id`='$Priority',`status_id`='$Status',
                         `task_datetime`='$date',`descreption`='$description',`id`='$id' WHERE id = $id";
-
+ 
     $result = mysqli_query($conn,$sql);
 
 
@@ -185,7 +188,6 @@ function deleteTask()
 
 {     include('database.php');
     $id = $_GET['id'];
-    echo $id;
     //CODE HERE
    $sql = "  DELETE FROM `tasks` WHERE id = $id";
    $result = mysqli_query($conn,$sql);

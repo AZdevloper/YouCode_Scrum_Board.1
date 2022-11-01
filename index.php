@@ -362,7 +362,7 @@
 							<input name="input-hidden" type="hidden" id="task-id" value="">
 							<div class="mb-3">
 								<label class="form-label">Title</label>
-								<input type="text" name="title" class="form-control" id="task-title"/>
+								<input type="text" name="title" class="form-control" id="task-title" required/>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Type</label>
