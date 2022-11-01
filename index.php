@@ -1,11 +1,5 @@
 <?php
     include('scripts.php');
-	// foreach($count as $row){
-	// 	echo "<pre>";
-	// 	var_dump($row["Nofrow"]);
-	// 	echo "</pre>";
-	// }
-	
 	
 
 ?>
